@@ -12,35 +12,35 @@ namespace TestProject3
         }
 
         [TestMethod]
-        public void CollectionAssert_AreEqual_ShouldPass_WhenCollectionsAreIdentical()
+        public void CollectionAssert_AreEqual_Pass()
         {
             List<int> testDigits = new List<int> { 1, 2, 3, 4, 5 };
             CollectionAssert.AreEqual(testDigits, digits, "Коллекции не равны");
         }
 
         [TestMethod]
-        public void CollectionAssert_AreEqual_ShouldFail_WhenCollectionsDiffer()
+        public void CollectionAssert_AreEqual_Fail()
         {
             List<int> testDigits = new List<int> { 1, 2, 3, 4 };
             CollectionAssert.AreEqual(testDigits, digits, "Коллекции не равны");
         }
 
         [TestMethod]
-        public void CollectionAssert_AreEquivalent_ShouldPass_WhenCollectionsContainSameElements()
+        public void CollectionAssert_AreEquivalent_Pass()
         {
             List<int> testDigits = new List<int> { 4, 2, 5, 1, 3 };
             CollectionAssert.AreEquivalent(testDigits, digits, "В коллекциях неодинаковые элементы");
         }
 
         [TestMethod]
-        public void CollectionAssert_AreEquivalent_ShouldFail_WhenCollectionsContainDifferentElements()
+        public void CollectionAssert_AreEquivalent_Fail()
         {
             List<int> testDigits = new List<int> { 4, 2, 5, 1 };
             CollectionAssert.AreEquivalent(testDigits, digits, "В коллекциях неодинаковые элементы");
         }
 
         [TestMethod]
-        public void Assert_AreEqual_ShouldPass_WhenDeltaIsWithinRange()
+        public void Assert_AreEqual_Pass()
         {
             double delta = 0.0001;
             double result = calculate(77, 142);
@@ -49,7 +49,7 @@ namespace TestProject3
         }
 
         [TestMethod]
-        public void Assert_AreEqual_ShouldFail_WhenDeltaExceedsRange()
+        public void Assert_AreEqual_Fail()
         {
             double delta = 0.0001;
             double result = calculate(77, 142);
