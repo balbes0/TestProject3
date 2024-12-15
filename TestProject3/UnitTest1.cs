@@ -4,7 +4,6 @@ namespace TestProject3
     public class UnitTest1
     {
         private static List<int> digits;
-        static List<string> student;
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
@@ -45,11 +44,21 @@ namespace TestProject3
         [TestMethod]
         public void LastTestPass()
         {
-            double delta = 0.0001;
-            double result = calculate(77, 142);
-            double trueResult = 54.22535211267606;
+            double delta = 0.0001; //разница не более чем ...
+            double result = calculate(77, 142); //два рандомных числа 
+            double trueResult = 54.2254; //округлили до тысячных число 54,22535211267606
 
-            Assert.AreEqual(trueResult, result, delta, "Капутер неправильно посчитал");
+            Assert.AreEqual(result, trueResult, delta, "Капутер видимо неправильно посчитал");
+        }
+
+        [TestMethod]
+        public void LastTestFail()
+        {
+            double delta = 0.0001; //разница не более чем ...
+            double result = calculate(77, 142); //два рандомных числа 
+            double trueResult = 54.2255; //округлили неправильно до тысячных число 54,22535211267606
+
+            Assert.AreEqual(result, trueResult, delta, "Капутер видимо неправильно посчитал");
         }
 
         private static double calculate(double a, double b)
